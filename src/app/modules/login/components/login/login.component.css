@@ -1,0 +1,93 @@
+.container-login{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-family: "Open Sans";
+    text-align: center;
+  }
+
+  #top{
+    /* background-image: url("assets/images/bg_login_top.png"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40%;
+  }
+  #top img{
+      width: 100%;
+  }
+  #bottom{
+    background-image: url("assets/images/bg_login_bottom.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60%;
+  }
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}  
+/* =========== */
+.login-header{
+    margin-top: -70px;
+}
+
+.login-header .welcome{
+    font-size: 24px;
+}
+.login-header .sysmexwam{
+    font-size: 32px;
+}
+.login-header .welcome,
+.login-header .sysmexwam{
+    color: #fff;
+}
+ 
+.clearfix{
+    height: 25px;
+}
+.no-radius{
+    border-radius: 0px;
+}
+button{
+    background-color:#fff;
+    font-size: 20px;
+    color: #444444;
+    margin-top: 20px;
+    margin-top: 10px;
+}
+#inputUserId{
+    margin-top: 10px;
+}
+.copyright{
+    color: #fff;
+    margin-top: 70px;
+    font-size: 18px;
+    /* margin-left: 40px; */
+    /* font-family: MyriadPro; */
+}
+fieldset{
+    width: 450px;
+    height: 273px;
+    border: 1px solid #fff;
+    padding: 0px 50px;
+    margin: auto;
+    margin-top: 30px;
+}

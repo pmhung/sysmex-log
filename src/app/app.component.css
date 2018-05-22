@@ -1,0 +1,94 @@
+  
+@font-face {
+  font-family: 'Arvo Bold';
+  src: url('assets/fonts/VAVOB.TTF');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+  background-color: #f7f8f9;
+  font-family: "Open Sans";
+  font-size: 15px;
+}
+.navbar-global {
+  background-color: indigo;
+}
+
+.navbar-global .navbar-brand {
+  color: white;
+}
+
+.navbar-global .navbar-user > li > a
+{
+  color: white;
+}
+
+.navbar-primary {
+  background-color: #3475b5;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  top: 51px;
+  width: 260px;
+  z-index: 8;
+  overflow: hidden;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.navbar-primary.collapsed {
+  width: 60px;
+}
+
+/* .navbar-primary.collapsed .glyphicon {
+  font-size: 22px;
+} */
+
+.navbar-primary.collapsed .nav-label {
+  display: none;
+}
+
+.btn-expand-collapse {
+    position: absolute;
+    display: block;
+    left: 0px;
+    bottom:0;
+    width: 100%;
+    padding: 8px 0;
+    border-top:solid 1px #666;
+    color: grey;
+    font-size: 20px;
+    text-align: center;
+}
+
+.btn-expand-collapse:hover,
+.btn-expand-collapse:focus {
+    background-color: #222;
+    color: white;
+}
+
+.btn-expand-collapse:active {
+    background-color: #111;
+}
+
+
+.main-content {
+  margin-top: 52px;
+  margin-left: 260px;
+  margin-bottom: 90px;
+}
+
+
+.collapsed-width +.main-content {
+  margin-left: 60px;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.orange{
+  color: #fa601f;
+}
+.blue{
+  color: #3475b5;
+}

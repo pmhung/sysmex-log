@@ -1,0 +1,36 @@
+<div class="container-login">
+  <div class="row " id="top">
+    <img src="assets/images/bg_login_top.png" alt="" srcset="">
+  </div>
+  <div class="row" id="bottom">
+    <div class="col-md-12">
+      <form class="form-signin text-center" (submit)="login()">
+        <fieldset>
+          <legend class="text-center"> &nbsp;</legend>
+
+          <div class="text-center login-header">
+            <span class="welcome"> welcome to
+              <br>
+            </span>
+            <span class="sysmexwam"> SYSMEX WAM</span>
+          </div>
+
+          <input type="text" id="inputUserId" name="inputUserId" class="form-control no-radius" placeholder="User ID*" [(ngModel)]="user.UserName"
+            required autofocus>
+          <div class="clearfix"></div>
+          <input type="password" id="inputPassword" name="inputPassword" class="form-control no-radius" placeholder="Password*" [(ngModel)]="user.Password"
+            required>
+
+          <button class="btn btn-lg btn-default no-radius" type="submit">LOGIN</button>
+        </fieldset>
+
+      </form>
+    </div>
+    <div class="col-md-12">
+      <p class="copyright ">Copyright© 1996-2018 Sysmex Corporation,
+        <br> All Rights Reserved</p>
+    </div>
+
+  </div>
+
+</div>

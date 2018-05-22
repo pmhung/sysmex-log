@@ -1,0 +1,208 @@
+.show-logs{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.title-page{
+    /* font-family: "Open Sans"; */
+    font-weight:  lighter;
+    font-size: 28px;
+    color: #3475b5;
+    padding-top:30px;
+    padding-bottom: 30px;
+    line-height: 20px;
+}
+.selection-criteria-title,
+.cart-title{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    color: #3475b5;
+}
+.border-top-blue{
+    border-top: 1px solid #3475b5;
+    box-shadow: 0px 0px 0.1px gray;
+    line-height: 44px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+  }
+
+
+/* table */
+.table-result  thead tr{
+    font-family: "OpenSans Bold";
+
+}
+
+.table thead th,.table tbody td{
+    font-family: "Open Sans";
+}
+
+.table tbody { display: block; }
+
+.table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.table thead, .table tbody, .table tr, .table th, .table td { display: block; }
+
+.table thead tr {
+    /* fallback */
+    width: 97%;
+    /* minus scroll bar width */
+    width: -webkit-calc(100% - 16px);
+    width:    -moz-calc(100% - 16px);
+    width:         calc(100% - 16px);
+}
+
+.table tr:after {  /* clearing float */
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.table tbody {
+    height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.table tbody td, .table thead th {
+    width: 48% !important;  /* 19% is less than (100% / 5 cols) = 20% */
+    float: left;
+}
+
+
+
+.table{
+    width: 100%;
+}
+.table td, .table th{
+    padding:0;
+}
+table .table th,td{
+    text-align: left;
+}
+.table thead tr{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 12px;
+    color: #fff;
+}
+.table tbody tr{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 14px;
+    border-bottom: 1px solid #FAEDED;
+}
+.table thead{
+    background-color: #005bac;
+}
+
+
+.table tbody td:first-child, .table thead th:first-child {
+    padding-left:24px;
+}
+
+.table thead th {
+    /* vertical-align: bottom; */
+    border-bottom: none;
+    border-top: none;
+    padding:0;
+}
+
+
+/* table log*/
+
+.table-result  thead tr{
+    font-family: "OpenSans Bold";
+
+}
+
+.table-log thead th,.table-log tbody td{
+    font-family: "Open Sans";
+}
+
+.table-log tbody { display: block; }
+
+.table-log {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.table-log thead, .table-log tbody, .table-log tr, .table-log th, .table-log td { display: block; }
+
+.table-log thead tr {
+    /* fallback */
+    width: 97%;
+    /* minus scroll bar width */
+    width: -webkit-calc(100% - 16px);
+    width:    -moz-calc(100% - 16px);
+    width:         calc(100% - 16px);
+}
+
+.table-log tr:after {  /* clearing float */
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.table-log tbody {
+    height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.table-log tbody td:first-child, .table-log thead th:first-child {
+    width: 40%;  
+    float: left;
+}
+.table-log tbody td:nth-child(2), .table-log thead th:nth-child(2) {
+    width: 40% ;  
+    float: left;
+}
+.table-log tbody td:nth-child(3), .table-log thead th:nth-child(3) {
+    width: 15% ;  
+    float: left;
+}
+.table-log tbody td, .table-log thead th {
+    width: 20%;  /* 19% is less than (100% / 5 cols) = 20% */
+    float: left;
+}
+
+
+
+.table-log{
+    width: 100%;
+}
+.table-log td, .table-log th{
+    padding:0;
+}
+table .table-log th,td{
+    text-align: left;
+}
+.table-log thead tr{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 12px;
+    color: #fff;
+}
+.table-log tbody tr{
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 14px;
+    border-bottom: 1px solid #FAEDED;
+}
+.table-log thead{
+    background-color: #005bac;
+}
+
+
+.table-log tbody td:first-child, .table-log thead th:first-child {
+    padding-left:24px;
+}
+
+.table-log thead th {
+    /* vertical-align: bottom; */
+    border-bottom: none;
+    border-top: none;
+    padding:0;
+}

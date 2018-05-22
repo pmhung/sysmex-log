@@ -1,0 +1,95 @@
+<div class="row step4 row-eq-height">
+  <div class="col-md-7  table-result">
+    <table class=".table-result  table  table-striped">
+      <thead>
+        <tr>
+          <th>Sel</th>
+          <th>Rule Name</th>
+          <th>Active</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let item of searchResult,let i=index" (click)="showDetail(item)">
+          <td scope="row">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" [(ngModel)]="item.selected" (change)="changeCheckBox($event,item,i)">
+            </div>
+          </td>
+          <td>{{item.ruleName}}</td>
+          <td>{{item.activeMode=='T'?'Active':'Inactive'}}</td>
+          <td>{{item.ruleDesc}}</td>
+        </tr>
+
+      </tbody>
+      <tfoot *ngIf="resultsAllData!=null&&resultsAllData.totalPages>0">
+        <tr>
+          <td colspan="3">Total number of records found: {{searchResult.length}}</td>
+          <td class="text-right">
+            <button type="button" class="btn btn-md btn-primary btn-md-text" (click)="AddToCart()">Add</button>
+          </td>
+
+        </tr>
+        <!-- <tr *ngIf="user.role>=0">
+          <td colspan="4">
+            <button type="button" class="btn btn-md btn-primary btn-md-text" *ngIf="user.role==1">Edit</button>
+            <button type="button" class="btn btn-md btn-primary btn-md-text" *ngIf="user.role==1">New</button>
+          </td>
+        </tr> -->
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="col-md-5 right detail-item">
+
+    <div class="title uppercase" *ngIf="curentDetail!=null">{{curentDetail.ruleName}}</div>
+    <ng-container *ngIf="curentDetail">
+      <p class="bold">{{curentDetail.ruleDesc}}</p>
+
+      <p class="" style="white-space: pre-line;">{{curentDetail.detailInfo}}</p>
+
+      <!-- <p class="text-blue">Active from 0/30/12 to 12/29/2099</p>
+      <hr>
+      <p>========= Patients =========</p>
+      <ul>
+        <li>
+          <span> Discipline: </span>
+          <span class="text-blue">CHEM</span>
+        </li>
+        <li>
+          <span> Trigger On: </span>
+          <span class="text-blue">Results</span>
+        </li>
+        <li>
+          <span> Run Selection: </span>
+          <span class="text-blue">All Runs</span>
+        </li>
+      </ul>
+      <p>========= Tests =========</p>
+      <ul>
+        <li>
+          <span class="text-blue"> PLT 1: </span>
+          <span>
+            <=1 Or>= 2</span>
+        </li>
+        <li>
+          <span class="text-blue"> RBC: </span>
+          <span>Present</span>
+        </li>
+        <li>
+          <span class="text-blue"> TAREA: </span>
+          <span>>= 0 and
+            <=0 .999</span>
+        </li>
+      </ul>
+      <p>========= Actions =========</p>
+      <p>
+        <span class="text-blue"> OP Alert = Name: A1C001 Type: G Text:</span>
+        HbAc1, Low Total Areo: Check sample volumn and integrit of aspiration needle
+      </p> -->
+    </ng-container>
+
+
+  </div>
+</div>

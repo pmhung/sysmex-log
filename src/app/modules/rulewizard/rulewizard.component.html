@@ -1,0 +1,170 @@
+<div class="row">
+  <div class="col-md-12">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a [routerLink]="['/dashboard']">Main menu</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a [routerLink]="['/dashboard/system']">System</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Rule Wizard</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="rule-wizard">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="title-page">
+        Rule wizard
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-eq-height">
+    <div class="col-md-3 ">
+      <div class="selection-criteria border-top-orange">
+        <div class="selection-criteria-title">Selection Criteria</div>
+        <span class="step">Common Criteria</span>
+        <br>
+        <span class="attribute"> Rule name: </span>
+        <span>{{searchModel.ruleName}}</span>
+        <br>
+        <span class="attribute"> Discipline: </span>
+        <span *ngIf="searchModel.discipline>0">{{searchModel.discipline==1?"Hematology":"Chemistry"}}</span>
+        <br>
+        <span class="attribute"> Active status: </span>
+        <span *ngIf="searchModel.activeMode>0">{{searchModel.activeMode==1?"Active":"Inactive"}}</span>
+        <br>
+        <span class="attribute"> Trigger on: </span>
+        <span *ngIf="searchModel.triggerOn>0">{{searchModel.triggerOn==1?"Result":"Order creation"}}</span>
+        <br>
+        <hr>
+        <span class="step">Patients Demographics</span>
+        <br>
+        <span class="attribute"> Patient Type: </span>
+        <span *ngIf="searchModel.patienType>0">{{searchModel.patienType==1?"In patient":"Out patient"}}</span>
+        <br>
+        <span class="attribute"> Gender: </span>
+        <span *ngIf="searchModel.gender>0">{{searchModel.gender==1?"Male":"Female"}}</span>
+        <br>
+        <span class="attribute"> MRN: </span>
+        <span>{{searchModel.mrn}}</span>
+        <br>
+        <span class="attribute"> Name: </span>
+        <span>{{searchModel.patientName}}</span>
+        <br>
+        <span class="attribute"> Req. Location: </span>
+        <span>{{searchModel.reqLocation}}</span>
+        <br>
+        <hr>
+        <span class="step">Test Level</span>
+        <br>
+        <ul>
+          <li *ngFor="let item of searchModel.testCode">
+            <span class="attribute">{{item.name}}</span>
+          </li>
+        </ul>
+        <br>
+
+      </div>
+      <div id="cart-panel" class="border-top-orange ">
+        <div class="cart-title">Selected Rules</div>
+        <span class="attribute"> There are
+          <span style="background-color: #ebebeb;">
+            <span class="orange bold">{{cart.length}}</span> rules </span>&nbsp;&nbsp;
+          <button type="button" class="btn btn-sm btn-primary " *ngIf="cart.length>0" (click)="showDetailCart()" id="seeAll"> see all</button>
+        </span>
+        <br>
+        <br>
+      </div>
+    </div>
+    <div class="col-md-9 container-all-step ">
+      <div class="form-all-step">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="nav nav-wizard">
+              <li (click)="selectStep(1)" id="tab1" class="tab active" attr-ref="content1">
+                <a>
+                  <span class="badge">1</span>
+                  Common Criteria</a>
+              </li>
+              <li (click)="selectStep(2)" id="tab2" class="tab" attr-ref="content2">
+                <a>
+                  <span class="badge">2</span>
+                  Patient Demographics</a>
+              </li>
+              <li (click)="selectStep(3)" id="tab3" class="tab" attr-ref="content3">
+                <a>
+                  <span class="badge">3</span>
+                  Test Level </a>
+              </li>
+              <li (click)="selectStep(4)" id="tab4" class="tab" attr-ref="content4">
+
+                <a>
+                  <span class="badge">4</span>
+                  Search Result</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="rule-wizard-body">
+              <form>
+
+                <step1-set-global-properties class="contentTab" id="contentTab1" [(searchModel)]="searchModel"></step1-set-global-properties>
+                <step2-patients-demographics class="contentTab collapse" id="contentTab2" [(searchModel)]="searchModel"></step2-patients-demographics>
+                <step3-test-level class="contentTab collapse" id="contentTab3" [(searchModel)]="searchModel"></step3-test-level>
+                <step4-search-result class="contentTab collapse" id="contentTab4" [searchResult]="results" [resultsAllData]="resultsAllData"
+                  (onUpdateCart)="updateCart($event)"></step4-search-result>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="position: absolute;bottom:0;width: 100%;padding-right: 30px; padding-left: 15px;">
+          <hr class="footer">
+          <div class=" row rule-wizard-footer">
+
+            <div class="col-md-12">
+              <form class="form-inline">
+                <div class="form-group">
+                  <button type="button" class="btn btn-md btn-primary btn-md-text" *ngIf="currentStep>1" (click)="backStep()">
+                    <span class="text">Back</span>
+                  </button>
+                  <button type="button" class="btn btn-md btn-primary btn-md-text" *ngIf="currentStep<4" (click)="nextStep()">
+                    <span class="text">Next</span>
+                  </button>
+
+                </div>
+                <div class="form-group" style="position: absolute;right:0px;">
+                  <button type="button" class="btn btn-md btn-outline-primary btn-md-text" (click)="quitSearh()">
+                    <span class="text">Quit</span>
+                  </button>
+                  <button type="button" class="btn btn-md btn-outline-primary btn-md-text" *ngIf="currentStep<4" (click)="clear()">
+                    <span class="text">Clear</span>
+                  </button>
+                  <button type="button" class="btn btn-md btn-primary btn-md-icon" (click)="search()">
+                    <span class="fas fa-list"></span>
+                    <span class="text">Search</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<detail-cart [(cart)]="cart"></detail-cart>

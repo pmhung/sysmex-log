@@ -1,0 +1,76 @@
+
+
+<div class="row">
+  <div class="col-md-3 label">Patient Type</div>
+  <div class="col-md-9">
+    <select class="form-control" [(ngModel)]="searchModel.patienType">
+      <option value="-1">--Select--</option>
+      <option value="1">In patient</option>
+      <option value="2">Out patient</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 label">Gender</div>
+  <div class="col-md-9">
+    <select class="form-control" [(ngModel)]="searchModel.gender">
+      <option value="-1">--Select--</option>
+      <option value="1">Male</option>
+      <option value="2">Female</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 label">MRN</div>
+  <div class="col-md-4">
+    <!-- <input type="text" class="form-control" [(ngModel)]="searchModel.mrn"> -->
+    <div class="form-control" style="min-height:38px;"><span>{{searchModel.mrn}}</span></div>
+  </div>
+  <div class="col-md-1">
+      <button type="button" class="btn btn-md btn-outline-primary btn-md-text" data-toggle="modal" 
+      data-backdrop="static" data-keyboard="false" data-target="#select-mrn" (click)="showMRNNameModal(true)">
+      <i class="fa fa-window-maximize"></i>
+      </button>
+    
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 label">Name</div>
+  <div class="col-md-4">
+    <!-- <input type="text" class="form-control" [(ngModel)]="searchModel.patientName"> -->
+    <div class="form-control" style="min-height:38px;"><span>{{searchModel.patientName}}</span></div>
+  </div>
+  <div class="col-md-1">
+      <button type="button" class="btn btn-md btn-outline-primary btn-md-text" data-toggle="modal" 
+      data-backdrop="static" data-keyboard="false" data-target="#select-mrn" (click)="showMRNNameModal(false)">
+      <i class="fa fa-window-maximize"></i>
+      </button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 label">Req. Location</div>
+  <div class="col-md-4">
+    <!-- <input type="text" class="form-control" [(ngModel)]="searchModel.reqLocation"> -->
+    <div class="form-control" style="min-height:38px;"><span>{{searchModel.reqLocation}}</span></div>
+  </div>
+  <div class="col-md-1">
+      <button type="button" class="btn btn-md btn-outline-primary btn-md-text" data-toggle="modal" 
+      data-backdrop="static" data-keyboard="false" data-target="#select-location" (click)="showLocationModal()">
+      <i class="fa fa-window-maximize"></i>
+      </button>
+  </div>
+</div>
+<br><br>
+
+<div class="modal fade" id="select-mrn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-md" role="document">
+    <mrn-name-popup (closeModal)="getDataMrnName($event)"></mrn-name-popup>
+  </div>
+</div>
+
+
+<div class="modal fade" id="select-location" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-md" role="document">
+    <location-popup (closeModal)="getDataLocation($event)"></location-popup>
+  </div>
+</div>

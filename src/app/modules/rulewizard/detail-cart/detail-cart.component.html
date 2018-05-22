@@ -1,0 +1,53 @@
+<div class="modal fade" id="panelDetailCart" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-12">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </div>
+        <div class="container-fluid">
+
+        
+          <div class="row title uppercase">
+            <div class="col-md-12">Selected rules</div>
+          </div>
+          <div class="row sub-title"><div class="col-md-12">You have <span style="background-color: #ebebeb;"> <span class="orange bold">{{cart.length}}</span> rules </span></div></div>
+          <div class="row">
+            <div class="col-md-12  table-result">
+              <table class=".table-result  table  table-striped">
+                <thead class="uppercase">
+                  <tr>
+                    <th>Test Cost</th>
+                    <th>Active</th>
+                    <th>Description</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of cart,let i=index">
+                    <td>{{item.ruleName}}</td>
+                    <td  class="blue text-center"><span *ngIf="item.activeMode=='T'" class="fas fa-check"></span></td>
+                    <td>{{item.ruleDesc}}</td>
+                    <td><button type="button"    class="btn btn-link btn-sm btn-block btn-remove" (click)="removeCart(item)"><span class="far fa-trash-alt"  ></span></button></td>
+                  
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<button id="btnPanelDetailCart" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#panelDetailCart"
+  style="display:none;"> </button>

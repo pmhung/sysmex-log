@@ -1,0 +1,58 @@
+.title{
+    margin-bottom: 34px;
+    color: #3475b5;
+}
+.row{
+    margin-bottom: 20px;
+}
+
+.table thead th{
+    width: 20px;
+} 
+.bold{
+    font-weight: bold;
+}
+.text-blue{
+    color: #3475b5;
+}
+.right{
+    border-left: 1px solid #3475b5;
+}
+
+.btn-md{
+    padding-left:  50px;
+    padding-right:  50px;
+}
+
+
+/* table */
+
+.table-result .row{
+    margin-bottom: 20px;
+}
+.table-result .row:hover{
+    cursor: pointer;
+}
+.table-result  .table-striped tbody tr:nth-of-type(odd){
+    background-color: rgba(0, 0, 0, 0);
+}
+.table-result  .table-striped tbody tr:nth-of-type(even){
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.table-result  thead tr{
+    font-family: "OpenSans Bold";
+    background-color: rgba(57, 132, 220, 0.25) ;
+
+}
+
+.table-result  tbody tr:hover{
+    background-color: rgba(205, 224, 246, 0.75) !important;
+}
+.step4{
+ margin-bottom:  109px;
+
+}
+.table thead th,.table tbody td{
+    font-family: "Open Sans"
+
+}
