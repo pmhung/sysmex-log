@@ -7,13 +7,17 @@ import { ShowLogsComponent } from './show-logs.component';
 import { ShowLogsService } from './show-logs.service';
 import { ShowLogPopupComponent } from './pop-up/popup-stack-trace.component';
 import { PaginationComponent } from '../pagination/pagination';
+
+import { DateFormatHTML } from './pipe/date-pipe.component';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ShowLogsRoutingModule
   ],
-  declarations: [ShowLogsComponent, ShowLogPopupComponent, PaginationComponent],
-  providers: [ShowLogsService]
+  exports:[DateFormatHTML],
+  declarations: [ShowLogsComponent, ShowLogPopupComponent, PaginationComponent, DateFormatHTML],
+  providers: [ShowLogsService, DateFormatHTML]
 })
 export class ShowLogsModule { }

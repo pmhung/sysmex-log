@@ -42,19 +42,20 @@
 
                                     </tr>
                                 </tbody>
-                                <tfoot>                    
+                                <!-- <tfoot>                    
                                     <tr>
                                         <td>
-                                            <pagination *ngIf="(arraySampleId.count>0)" 
-                                                (onChangePage)="changePage($event)" 
-                                                [showPageSize]="(false)" 
-                                                [showTotal]="(true)"
-                                                [pager]="pager">
-                                            </pagination>
+
                                         </td>
                                     </tr>                    
-                                </tfoot>                                
+                                </tfoot>                                 -->
                             </table>
+                            <pagination *ngIf="(arraySampleId.count>0)" 
+                                (onChangePage)="changePage($event)" 
+                                [showPageSize]="(false)" 
+                                [showTotal]="(true)"
+                                [(pager)]="pager">
+                            </pagination>
                 </div>
 
             </div>
@@ -82,7 +83,7 @@
                                         {{item.status}}
                                     </td>
                                     <td>
-                                        {{item.actionDate}}
+                                        {{item.actionDate | dateFormatHTML}}
                                     </td>
                                     <td>
                                         <!-- {{item.stack}} -->

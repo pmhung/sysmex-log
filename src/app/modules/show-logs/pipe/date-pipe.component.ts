@@ -2,10 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import * as _ from 'lodash';
 
 @Pipe({
-    name: 'dateFormat',
+    name: 'dateFormatHTML',
     pure: true
 })
-export class DateFormat implements PipeTransform {
+export class DateFormatHTML implements PipeTransform {
     transform(value: any): string {
         
         var dateTime = new Date(value);

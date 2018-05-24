@@ -7,8 +7,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class ShowLogsService{
-    private apiGetSampleId = 'http://10.16.189.63:8181/cxf/logviewer/sampleId';
-    private apiShowDetail = 'http://10.16.189.63:8181/cxf/logviewer/findBySampleId/';
+    private apiGetSampleId = 'http://10.17.75.122:8181/cxf/logviewer/sampleId';
+    private apiShowDetail = 'http://10.17.75.122:8181/cxf/logviewer/findBySampleId/';
 
     constructor(private http: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class ShowLogsService{
         cxf/logviewer/sampleId/search?sampleId=ngan&page=0&size=200
          */
         if(sampleId){
-            url += `/search?sampleId=${sampleId}&page=0&size=200`;
+            url += `/search?sampleId=${sampleId}&page=${page-1}&size=10`;
         }else{
             url +=`?page=${page-1}&size=10`;
         }

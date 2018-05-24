@@ -22,7 +22,7 @@ export class ShowLogsComponent implements OnInit {
     this.arraySampleId = {};    
     this.arrayDetail = new Array<any>();
     this.keyWordSearch = "";
-    this.pager = {};
+    this.pager = this.showLogsService.getPager(0);
   }
   searchSampleId(){
     this.keyWordSearch = this.sampleId;
@@ -30,14 +30,15 @@ export class ShowLogsComponent implements OnInit {
   }
 
   getSampleId(keyWord, currentPage = 1){
+    this.pager.currentPage = currentPage;
       this.showLogsService.getAllSampleId(keyWord, currentPage).subscribe(results=>{
         this.arraySampleId = results;
         if(results){
           this.rowClick(results["content"][0]);
           this.position = 0;
         }
-        this.pager = this.showLogsService.getPager(this.arraySampleId.count);
-        console.log(this.pager);
+        this.pager = this.showLogsService.getPager(this.arraySampleId.count, this.pager.currentPage);
+
       },errors=>{
   
       });    
@@ -53,7 +54,7 @@ export class ShowLogsComponent implements OnInit {
         this.position = 0;        
       }
       this.pager = this.showLogsService.getPager(this.arraySampleId.count);
-      console.log(this.pager);
+
     },errors=>{
 
     });
@@ -82,8 +83,8 @@ export class ShowLogsComponent implements OnInit {
     this.popupShowLog.initPopup(item.content); 
   }
   changePage(event) {
-    console.log(event);
     //{pageIndex: 2, pageSize: 10}
     this.getSampleId(this.keyWordSearch, event.pageIndex);
+    
   }
 }

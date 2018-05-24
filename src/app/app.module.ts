@@ -25,6 +25,7 @@ import { DashboardModule } from "./modules/dashboard/dashboard.module";
 import { SampleExplorerModule } from "./modules/sample-explorer/sample-explorer.module";
 import { ShowLogsModule } from "./modules/show-logs/show-logs.module";
 //import { PaginationComponent } from './modules/pagination/pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
