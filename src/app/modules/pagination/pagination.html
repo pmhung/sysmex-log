@@ -1,0 +1,32 @@
+<form class="form-inline" role="form">
+        <div class="form-group step-button-1" *ngIf="showTotal==true">
+          <!-- {{pager|json}} -->
+          Total number of records found: {{pager.totalItems}}
+        </div>
+        <ng-container *ngIf="pager.pages && pager.pages.length>0 && pager.totalPages > 1">
+          <ul class="pagination">
+            <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+              <a aria-label="First" class="page-link" (click)="gotoPage(1)">
+                <span aria-hidden="true">«</span>
+              </a>
+            </li>
+      
+            <li *ngFor="let page of pager.pages" class="page-item" [ngClass]="{active:pager.currentPage === page}">
+              <a class="page-link" (click)="gotoPage(page)">{{page}}</a>
+            </li>
+      
+            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a aria-label="Last" class="page-link" (click)="gotoPage(pager.totalPages)">
+                <span aria-hidden="true">»</span>
+              </a>
+            </li>
+          </ul>
+          <ng-container *ngIf="showPageSize">
+            <select class="form-control boxPageSize" required="required" [(ngModel)]="pager.pageSize" [ngModelOptions]="{standalone: true}"
+              (change)="ChangePageSize()">
+              <option *ngFor="let c of pageSizes" [ngValue]="c">{{c}}</option>
+            </select>
+            items per page
+          </ng-container>
+        </ng-container>
+      </form>

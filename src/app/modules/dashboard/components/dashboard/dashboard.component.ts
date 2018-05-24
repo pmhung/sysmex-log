@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
     // { name: '', title: 'Critical Results', icon: 'icon4.png' },
     // { name: '', title: 'Barcode Errors', icon: 'icon5.png' },
     // { name: '', title: 'Smear Status', icon: 'icon6.png' },
-    { name: '', title: 'Show Logs', icon: 'icon7.png', path: '/dashboard/show-logs' },
+    { name: '', title: 'Show Logs', icon: 'icon7.png', path: '/show-logs' },
     // { name: '', title: 'Alert Module', icon: 'icon8.png' },
     // { name: '', title: 'Auto-Validation Control', icon: 'icon9.png' },
     // { name: '', title: 'Unregisterd Results', icon: 'icon10.png' },

@@ -6,7 +6,7 @@ import { AuthGuard } from '../../../common/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'dashboard/show-logs', component: SecureComponent, canActivate: [AuthGuard], data: { title: 'Secure Views' }, children: [
+    path: 'show-logs', component: SecureComponent, canActivate: [AuthGuard], data: { title: 'Secure Views' }, children: [
       { path: '', component: ShowLogsComponent, canActivate: [AuthGuard] }
     ]
   },

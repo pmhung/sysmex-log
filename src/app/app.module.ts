@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -23,16 +24,19 @@ import { RulewizardModule } from "./modules/rulewizard/rulewizard.module";
 import { DashboardModule } from "./modules/dashboard/dashboard.module";
 import { SampleExplorerModule } from "./modules/sample-explorer/sample-explorer.module";
 import { ShowLogsModule } from "./modules/show-logs/show-logs.module";
+//import { PaginationComponent } from './modules/pagination/pagination';
 @NgModule({
   declarations: [
     AppComponent,
     NavHorizontalComponent,
     NavVerticalComponent,
     PublicComponent,
-    SecureComponent
+    SecureComponent,
+    //PaginationComponent
   ],
   imports: [
     LoginModule,
+    FormsModule,
     BrowserModule,
     DashboardModule,
     SystemModule,

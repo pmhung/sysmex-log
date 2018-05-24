@@ -7,8 +7,9 @@ import { User } from '../../../shared/models';
   templateUrl: './popup-stack-trace.component.html',
   styleUrls: ['./popup-stack-trace.component.css'],
 })
-export class LocationPopupComponent implements OnInit {
-    public arrayLocation: Array<any>;    
+export class ShowLogPopupComponent implements OnInit {
+    public arrayTest: Array<any>;    
+    public stackTrace: string;
     @Output() closeModal = new EventEmitter<Array<any>>();
 
     constructor(){
@@ -17,12 +18,14 @@ export class LocationPopupComponent implements OnInit {
     ngOnInit(){
     }
 
-    public initPopup(type: boolean){
-
+    public initPopup(showContent){
+      this.stackTrace = showContent;
     }
 
     public sendData(){
-
+      var testArr = [{a: 1, b: 2}];
+      this.closeModal.emit(testArr);
     }
+
     
 }

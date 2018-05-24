@@ -2,43 +2,10 @@
 
 <div class="modal-content">
         <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">MRN</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closeAddExpenseModal><span aria-hidden="true">&times;</span></button>
-            
+                <h4 class="modal-title" id="myModalLabel">Stack Trace</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closeAddExpenseModal><span aria-hidden="true">&times;</span></button>     
         </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-md-12 table-result">
-                    <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th>Action</th>
-                            <th>Status</th>
-                            <th>Stack Trace</th>                              
-                          </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let item of arrayLocation,let i=index">
-                                <td>
-                                    <input type="checkbox" [(ngModel)]="item.selected"/>
-                                </td>
-                                <td>
-                                    {{item.location}}
-                                </td>
-                                <td>
-                                    {{item.description}}
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-    
-            <div class="row">
-                <div class="col-md-12 text-right">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Confirm" #closeAddExpenseModal (click)="sendData()">OK</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close" #closeAddExpenseModal>Cancel</button>
-                </div>
-            </div>
+        <div class="modal-body" style="word-wrap: break-word;white-space: pre-line;">
+            {{stackTrace}}
         </div>    
     </div>
