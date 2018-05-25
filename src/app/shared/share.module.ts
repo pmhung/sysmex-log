@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule  } from "@angular/router";
 
+//import { DateFormatHTML } from '../modules/show-logs/pipe/date-pipe.component';
+
 import { AppChildrenComponent } from "./components/app-children/app-children.component";
 @NgModule({
   imports: [
@@ -12,5 +14,6 @@ import { AppChildrenComponent } from "./components/app-children/app-children.com
   ],
   declarations: [AppChildrenComponent],
   exports:[AppChildrenComponent ],
+  providers: [],
 })
 export class ShareModule { }

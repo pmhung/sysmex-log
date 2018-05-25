@@ -9,11 +9,12 @@
     list-style: none;
     border-radius: .25rem;
     float: right;
+    font-size: 11px;
 }
 .page-link {
     position: relative;
     display: block;
-    padding: .5rem .75rem;
+    padding: .5rem .7rem;
     margin-left: -1px;
     line-height: 1.25;
     color: #005bac;

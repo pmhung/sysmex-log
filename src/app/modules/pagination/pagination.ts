@@ -11,9 +11,15 @@ export class PaginationComponent {
     @Input() showPageSize: boolean = false;
     @Input() showTotal: boolean = false;
     @Output() onChangePage = new EventEmitter<any>();
+    public bindingArray: Array<any>;
+    public startItem: number;
+    public endItem: number;
     private pageSizes: number[] = [5, 10, 20, 25, 50, 100];
     constructor(private showLogService: ShowLogsService) {
         // this.pager = this.data.getPager(100, 1, 10);
+        this.bindingArray = new Array<any>();
+        this.startItem = 0;
+        this.endItem = 5;
     }
     // // pager object
     ngOnInit() {
@@ -21,6 +27,10 @@ export class PaginationComponent {
 
     gotoPage(page: number) {
         if (page < 1 || page > this.pager.totalPages || page == this.pager.currentPage) return;
+        var indexOfPage = this.pager.pages.indexOf(page);
+        this.startItem  = Math.floor(indexOfPage/5)*5;
+        this.endItem = this.startItem + 5;
+
         this.onChangePage.emit({ pageIndex: page, pageSize: this.pager.pageSize });
     }
     ChangePageSize() {
@@ -29,5 +39,12 @@ export class PaginationComponent {
     public rerender(pager) {
         this.pager = this.showLogService.getPager(pager.totalItems, pager.pageIndex, pager.pageSize);
     }
+
+    // bindingFivePage(){
+    //     var indexOfPage = this.pager.pages.indexOf(page);
+    //     var arrPart  = Math.floor((indexOfPage + 1)/5);
+    //     this.bindingArray = this.pager.pages.slice(arrPart, arrPart+5);
+    //     console.log();
+    // }
 
 }
