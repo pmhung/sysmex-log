@@ -19,7 +19,18 @@ export class ShowLogPopupComponent implements OnInit {
     }
 
     public initPopup(showContent){
-      this.stackTrace = showContent;
+      this.stackTrace = showContent;      
+    }
+
+    selectText(){
+      var selectText = document.getElementById('show-json');
+
+      var range = document.createRange();
+      range.selectNodeContents(selectText);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      //document.getElementById('show-json')
     }
 
     public sendData(){

@@ -12,7 +12,10 @@ export class DateFormatHTML implements PipeTransform {
         var month = dateTime.getMonth() + 1;
         var date = dateTime.getDate();
         var year = dateTime.getFullYear();
-        var formatDate = month + "/" + date + "/" + year;
+        var hours = dateTime.getHours();
+        var minutes = dateTime.getMinutes();
+        var seconds = dateTime.getSeconds();
+        var formatDate = month + "/" + date + "/" + year + " " + hours +":"+minutes+":"+seconds ;
         return formatDate;
     }
 }
