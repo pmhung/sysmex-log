@@ -19,9 +19,9 @@ export class ShowLogsService{
         cxf/logviewer/sampleId/search?sampleId=ngan&page=0&size=200
          */
         if(sampleId){
-            url += `/search?sampleId=${sampleId}&page=${page-1}&size=10`;
+            url += `/search?sampleId=${sampleId}&page=${page-1}&size=15`;
         }else{
-            url +=`?page=${page-1}&size=10`;
+            url +=`?page=${page-1}&size=15`;
         }
         return this.http.get<any>(url);
     }
@@ -31,7 +31,7 @@ export class ShowLogsService{
 
         return this.http.get<any>(url);
     }
-    getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
+    getPager(totalItems: number, currentPage: number = 1, pageSize: number = 15) {
         // calculate total pages
     
         let totalPages = Math.ceil(totalItems / pageSize);
