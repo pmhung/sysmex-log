@@ -7,10 +7,15 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class ShowLogsService{
-    private apiGetSampleId = 'http://10.17.75.122:8181/cxf/logviewer/sampleId';
-    private apiShowDetail = 'http://10.17.75.122:8181/cxf/logviewer/findBySampleId/';
-
-    constructor(private http: HttpClient) { }
+    private apiGetSampleId = '';
+    private apiShowDetail = '';
+    //http://10.17.75.122:8181/cxf/logviewer/sampleId
+    //http://10.17.75.122:8181/cxf/logviewer/findBySampleId/
+    constructor(private http: HttpClient) {
+      var origin = window.location.origin;
+      this.apiGetSampleId = origin + '/cxf/logviewer/sampleId';
+      this.apiShowDetail = origin + '/cxf/logviewer/findBySampleId/';
+    }
 
     getAllSampleId(sampleId = '', page = 1): Observable<any[]> {
         let url = this.apiGetSampleId;
