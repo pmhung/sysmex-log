@@ -42,21 +42,21 @@ export class ShowLogsService{
         let totalPages = Math.ceil(totalItems / pageSize);
     
         let startPage: number, endPage: number;
-        if (totalPages <= 10) {
+        if (totalPages <= 5) {
           // less than 10 total pages so show all
           startPage = 1;
           endPage = totalPages;
         } else {
           // more than 10 total pages so calculate start and end pages
-          if (currentPage < 6) {
+          if (currentPage < 3) {
             startPage = 1;
-            endPage = 10;
+            endPage = 5;
           } else if (currentPage + 4 >= totalPages) {
-            startPage = totalPages - 9;
+            startPage = totalPages - 4;
             endPage = totalPages;
           } else {
-            startPage = currentPage - 5;
-            endPage = currentPage + 4;
+            startPage = currentPage - 1;
+            endPage = currentPage + 3;
           }
         }
     
