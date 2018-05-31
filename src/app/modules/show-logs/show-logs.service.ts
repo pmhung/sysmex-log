@@ -7,16 +7,14 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class ShowLogsService{
-    private apiGetSampleId = '/cxf/logviewer/sampleId';
-    private apiShowDetail = '/cxf/logviewer/findBySampleId/';
+    private apiGetSampleId = 'http://10.17.75.122:8181/cxf/logviewer/sampleId';
+    private apiShowDetail = 'http://10.17.75.122:8181/cxf/logviewer/findBySampleId/';
     //http://10.17.75.122:8181/cxf/logviewer/sampleId
     //http://10.17.75.122:8181/cxf/logviewer/findBySampleId/
     constructor(private http: HttpClient) {
       //var origin = window.location.origin;
       // this.apiGetSampleId = origin + '/cxf/logviewer/sampleId';
       // this.apiShowDetail = origin + '/cxf/logviewer/findBySampleId/';
-      // this.apiGetSampleId = 'http://10.17.75.122:8181/cxf/logviewer/sampleId';
-      // this.apiShowDetail = 'http://10.17.75.122:8181/cxf/logviewer/findBySampleId/';
     }
 
     getAllSampleId(sampleId = '', page = 1): Observable<any[]> {
@@ -44,21 +42,21 @@ export class ShowLogsService{
         let totalPages = Math.ceil(totalItems / pageSize);
     
         let startPage: number, endPage: number;
-        if (totalPages <= 5) {
+        if (totalPages <= 10) {
           // less than 10 total pages so show all
           startPage = 1;
           endPage = totalPages;
         } else {
           // more than 10 total pages so calculate start and end pages
-          if (currentPage < 3) {
+          if (currentPage < 6) {
             startPage = 1;
-            endPage = 5;
+            endPage = 10;
           } else if (currentPage + 4 >= totalPages) {
-            startPage = totalPages - 4;
+            startPage = totalPages - 9;
             endPage = totalPages;
           } else {
-            startPage = currentPage - 1;
-            endPage = currentPage + 3;
+            startPage = currentPage - 5;
+            endPage = currentPage + 4;
           }
         }
     

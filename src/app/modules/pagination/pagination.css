@@ -10,6 +10,7 @@
     border-radius: .25rem;
     float: right;
     font-size: 11px;
+    z-index: 10;
 }
 .page-link {
     position: relative;
