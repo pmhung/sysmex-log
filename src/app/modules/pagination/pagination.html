@@ -10,20 +10,20 @@
                 <span aria-hidden="true">««</span>
               </a>
             </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+            <!-- <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
               <a aria-label="First" class="page-link" (click)="gotoPage(pager.currentPage-1)">
                 <span aria-hidden="true">«</span>
               </a>
-            </li>
-            <!-- .slice(startItem, endItem) -->
-            <li *ngFor="let page of pager.pages.slice(startItem, endItem)" class="page-item" [ngClass]="{active:pager.currentPage === page}">
+            </li> -->
+            <!-- .slice(startItem, endItem) .slice(startItem, endItem)-->
+            <li *ngFor="let page of pager.pages" class="page-item" [ngClass]="{active:pager.currentPage === page}">
               <a class="page-link" (click)="gotoPage(page)">{{page}}</a>
             </li>
-            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <!-- <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
               <a aria-label="First" class="page-link" (click)="gotoPage(pager.currentPage+1)">
                 <span aria-hidden="true">»</span>
               </a>
-            </li>
+            </li> -->
             <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
               <a aria-label="Last" class="page-link" (click)="gotoPage(pager.totalPages)">
                 <span aria-hidden="true">»»</span>

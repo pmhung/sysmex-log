@@ -27,9 +27,9 @@ export class PaginationComponent {
 
     gotoPage(page: number) {
         if (page < 1 || page > this.pager.totalPages || page == this.pager.currentPage) return;
-        var indexOfPage = this.pager.pages.indexOf(page);
-        this.startItem  = Math.floor(indexOfPage/5)*5;
-        this.endItem = this.startItem + 5;
+        // var indexOfPage = this.pager.pages.indexOf(page);
+        // this.startItem  = Math.floor(indexOfPage/5)*5;
+        // this.endItem = this.startItem + 5;
 
         this.onChangePage.emit({ pageIndex: page, pageSize: this.pager.pageSize });
     }
