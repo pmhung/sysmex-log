@@ -12,7 +12,7 @@ export class ShowLogsService{
     //http://10.17.75.122:8181/cxf/logviewer/sampleId
     //http://10.17.75.122:8181/cxf/logviewer/findBySampleId/
     constructor(private http: HttpClient) {
-      var origin = window.location.origin;
+      //var origin = window.location.origin;
       // this.apiGetSampleId = origin + '/cxf/logviewer/sampleId';
       // this.apiShowDetail = origin + '/cxf/logviewer/findBySampleId/';
       // this.apiGetSampleId = 'http://10.17.75.122:8181/cxf/logviewer/sampleId';
